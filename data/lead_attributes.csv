@@ -1,0 +1,198 @@
+dataType,displayName,id,length,name,readOnly
+string,Company Name,2,255.0,company,False
+string,Site,3,255.0,site,False
+text,Billing Address,4,,billingStreet,False
+string,Billing City,5,255.0,billingCity,False
+string,Billing State,6,255.0,billingState,False
+string,Billing Country,7,255.0,billingCountry,False
+string,Billing Postal Code,8,255.0,billingPostalCode,False
+url,Website,9,255.0,website,False
+string,Main Phone,10,255.0,mainPhone,False
+currency,Annual Revenue,13,,annualRevenue,False
+integer,Num Employees,14,,numberOfEmployees,False
+string,Industry,15,255.0,industry,False
+string,SIC Code,16,40.0,sicCode,False
+text,Company Notes,18,,mktoCompanyNotes,False
+string,Marketo Data.com Id,32,50.0,,
+string,Marketo Data.com Status,33,50.0,,
+integer,Id,39,,id,False
+string,Full Name,40,255.0,mktoName,True
+string,Person Type,41,50.0,personType,False
+boolean,Is Partner,43,,mktoIsPartner,False
+boolean,Is Lead,44,,isLead,False
+boolean,Is Customer,45,,mktoIsCustomer,False
+boolean,Is Anonymous,46,,isAnonymous,False
+string,Salutation,47,255.0,salutation,False
+string,First Name,48,255.0,firstName,False
+string,Middle Name,49,255.0,middleName,False
+string,Last Name,50,255.0,lastName,False
+email,Email Address,51,255.0,email,False
+phone,Phone Number,52,255.0,phone,False
+phone,Mobile Phone Number,53,255.0,mobilePhone,False
+phone,Fax Number,54,255.0,fax,False
+string,Job Title,57,255.0,title,False
+reference,Contact Company,58,,contactCompany,True
+date,Date of Birth,59,,dateOfBirth,False
+text,Address,60,,address,False
+string,City,61,255.0,city,False
+string,State,62,255.0,state,False
+string,Country,63,255.0,country,False
+string,Postal Code,64,255.0,postalCode,False
+string,Original Source Type,66,255.0,originalSourceType,True
+string,Original Source Info,67,2000.0,originalSourceInfo,True
+string,Registration Source Type,68,255.0,registrationSourceType,False
+string,Registration Source Info,69,2000.0,registrationSourceInfo,False
+string,Original Search Engine,70,255.0,originalSearchEngine,True
+string,Original Search Phrase,71,255.0,originalSearchPhrase,True
+url,Original Referrer,72,255.0,originalReferrer,True
+boolean,Email Invalid,73,,emailInvalid,False
+string,Email Invalid Cause,74,255.0,emailInvalidCause,False
+boolean,Unsubscribed,75,,unsubscribed,False
+string,Unsubscribed Reason,77,2000.0,unsubscribedReason,False
+boolean,Do Not Call,78,,doNotCall,False
+string,Do Not Call Cause,79,255.0,mktoDoNotCallCause,False
+string,Do Not Call Reason,80,2000.0,doNotCallReason,False
+text,Person Notes,85,,mktoPersonNotes,False
+string,Anonymous IP,99,255.0,anonymousIP,False
+string,Inferred Company,100,255.0,inferredCompany,True
+string,Inferred Country,101,255.0,inferredCountry,True
+string,Inferred City,102,255.0,inferredCity,True
+string,Inferred State Region,103,255.0,inferredStateRegion,True
+string,Inferred Postal Code,104,255.0,inferredPostalCode,True
+string,Inferred Metropolitan Area,105,255.0,inferredMetropolitanArea,True
+string,Inferred Phone Area Code,106,255.0,inferredPhoneAreaCode,True
+string,Department,122,255.0,department,False
+string,Marketo Data.com Status,123,50.0,,
+string,Marketo Data.com Id,124,50.0,,
+datetime,Created At,126,,createdAt,True
+datetime,Updated At,127,,updatedAt,True
+string,Cookies,132,255.0,cookies,False
+reference,Lead Person,135,,leadPerson,True
+string,Role,137,50.0,leadRole,False
+string,Lead Source,138,255.0,leadSource,False
+string,Lead Status,139,255.0,leadStatus,False
+integer,Lead Score,140,,leadScore,False
+float,Urgency,141,,urgency,False
+integer,Priority,142,,priority,False
+integer,Relative Score,143,,relativeScore,False
+integer,Relative Urgency,144,,relativeUrgency,False
+string,Lead Rating,154,255.0,rating,False
+reference,Primary Lead Interest,173,,personPrimaryLeadInterest,True
+reference,Lead Partition,437,,leadPartitionId,False
+reference,Lead Revenue Cycle Model ID,443,,leadRevenueCycleModelId,False
+reference,Lead Revenue Stage ID,445,,leadRevenueStageId,False
+string,Marketo Social Gender,492,255.0,gender,False
+string,Marketo Social Facebook Display Name,493,255.0,facebookDisplayName,False
+string,Marketo Social Twitter Display Name,494,255.0,twitterDisplayName,False
+string,Marketo Social LinkedIn Display Name,495,255.0,linkedInDisplayName,False
+string,Marketo Social Facebook Profile URL,497,2000.0,facebookProfileURL,False
+string,Marketo Social Twitter Profile URL,498,2000.0,twitterProfileURL,False
+string,Marketo Social LinkedIn Profile URL,499,2000.0,linkedInProfileURL,False
+string,Marketo Social Facebook Photo URL,501,2000.0,facebookPhotoURL,False
+string,Marketo Social Twitter Photo URL,502,2000.0,twitterPhotoURL,False
+string,Marketo Social LinkedIn Photo URL,503,2000.0,linkedInPhotoURL,False
+integer,Marketo Social Facebook Reach,505,,facebookReach,False
+integer,Marketo Social Twitter Reach,506,,twitterReach,False
+integer,Marketo Social LinkedIn Reach,507,,linkedInReach,False
+integer,Marketo Social Facebook Referred Visits,509,,facebookReferredVisits,False
+integer,Marketo Social Twitter Referred Visits,510,,twitterReferredVisits,False
+integer,Marketo Social LinkedIn Referred Visits,511,,linkedInReferredVisits,False
+integer,Marketo Social Total Referred Visits,513,,totalReferredVisits,True
+integer,Marketo Social Facebook Referred Enrollments,514,,facebookReferredEnrollments,False
+integer,Marketo Social Twitter Referred Enrollments,515,,twitterReferredEnrollments,False
+integer,Marketo Social LinkedIn Referred Enrollments,516,,linkedInReferredEnrollments,False
+integer,Marketo Social Total Referred Enrollments,518,,totalReferredEnrollments,True
+datetime,Marketo Social Last Referred Visit,519,,lastReferredVisit,False
+datetime,Marketo Social Last Referred Enrollment,520,,lastReferredEnrollment,False
+string,Marketo Social Syndication Id,521,2000.0,syndicationId,False
+string,Marketo Social Facebook Id,522,2000.0,facebookId,False
+string,Marketo Social Twitter Id,523,2000.0,twitterId,False
+string,Marketo Social LinkedIn Id,524,2000.0,linkedInId,False
+reference,Acquisition Program,571,,acquisitionProgramId,False
+datetime,Acquisition Date,573,,mktoAcquisitionDate,False
+string,I am a,644,255.0,iama,False
+integer,MEMBER_RATING,645,,MEMBERRATING,False
+string,UTM-Campaign-Source,646,255.0,uTMCampaignSource,False
+string,UTM-Campaign-Medium,647,255.0,uTMCampaignMedium,False
+string,UTM-Campaign-Name,648,255.0,uTMCampaignName,False
+string,UTM-Campaign-Term,649,255.0,uTMCampaignTerm,False
+string,UTM-Campaign-Content,650,255.0,uTMCampaignContent,False
+string,External Company Id,653,50.0,externalCompanyId,False
+string,MarketoBU,657,255.0,marketoBU,False
+string,Subscribe CTE,664,255.0,pCCEDSubscription,False
+string,_Dynamic Content #03,665,255.0,pCWSESubscription,False
+string,Subscribe FSW,671,255.0,pCSCWSubscription,False
+string,Event Status,674,255.0,pCVETSubscription,False
+string,Subscribe DIN,676,255.0,pCUCALAthleticsSubscription,False
+date,Event Date,691,,eventDate,False
+string,Event Name,692,255.0,eventName,False
+string,Subscribe CSM,694,255.0,subscribeCSM,False
+string,Subscribe SSE,695,255.0,subscribeSSE,False
+string,Subscribe SCPA,696,255.0,subscribeSCPA,False
+string,Subscribe ODC,697,255.0,subscribeODC,False
+string,Subscribe UNV,698,255.0,subscribeUNV,False
+string,Subscribe HSB,699,255.0,subscribeHSB,False
+string,Subscribe LAW,700,255.0,subscribeLAW,False
+string,_Dynamic Content #02,701,255.0,subscribeCED,False
+string,Subscribe WSE,702,255.0,subscribeWSE,False
+string,Subscribe SCI,703,255.0,subscribeSCI,False
+string,Subscribe QTR,704,255.0,subscribeQTR,False
+string,Subscribe EVD,705,255.0,subscribeEVD,False
+string,Subscribe CAMP,706,255.0,subscribeCAMP,False
+string,Subscribe NUR,707,255.0,subscribeNUR,False
+string,Subscribe VET,708,255.0,subscribeVET,False
+string,Subscribe KIN,709,255.0,subscribeKIN,False
+string,_Dynamic Content #01,710,255.0,subscribeATH,False
+string,Subscribe SPP,711,255.0,subscribeSPP,False
+string,Subscribe SCW,712,255.0,subscribeSCW,False
+string,Subscribe ART,713,255.0,subscribeART,False
+string,External Sales Person Id,714,50.0,externalSalesPersonId,False
+string,REID,719,255.0,reID,False
+string,Current School,720,255.0,currentSchool,False
+string,Current Education Level,721,255.0,currentEducationLevel,False
+string,Program of Interest 1,722,255.0,programofInterest1,False
+string,Program of Interest 2,723,255.0,programofInterest2,False
+string,Program of Interest 3,724,255.0,programofInterest3,False
+string,Program of Interest 4,725,255.0,programofInterest4,False
+integer,_Resource Counter,728,,resourceCounter,False
+string,_Subscription Temp,729,255.0,subscriptionTemp,False
+string,Faculty,730,255.0,faculty,False
+string,UCID,731,255.0,uCID,False
+text,Dietary Restrictions,732,,dietaryRestrictions,False
+string,_Dynamic Content #04,739,255.0,dynamicContent04,False
+string,_Dynamic Content #05,740,255.0,dynamicContent05,False
+string,_Dynamic Content #06,741,255.0,dynamicContent06,False
+string,_Dynamic Content #07,754,255.0,dynamicContent07,False
+string,_Dynamic Content #08,755,255.0,dynamicContent08,False
+string,_Dynamic Content #09,756,255.0,dynamicContent09,False
+string,_Dynamic Content #10,757,255.0,dynamicContent10,False
+string,_Dynamic Content #11,758,255.0,dynamicContent11,False
+string,_Dynamic Content #12,759,255.0,dynamicContent12,False
+string,Category,762,255.0,category,False
+string,Grad Year,763,255.0,gradYear,False
+string,_Global Subscription Preferences,817,255.0,globalSubscriptionPreferences,False
+string,Last Form Fill,818,255.0,lastFormFill,False
+date,CEM Acquisition Date,819,,cEMAcquisitionDate,False
+string,Added By,825,255.0,addedBy,False
+string,_Flex Field 01,828,255.0,flexField01,False
+string,_Flex Field 02,829,255.0,flexField02,False
+string,_Flex Field 03,830,255.0,flexField03,False
+string,_Flex Field 04,831,255.0,flexField04,False
+string,_Flex Field 05,832,255.0,flexField05,False
+string,_Flex Field 06,833,255.0,flexField06,False
+string,_Flex Field 07,834,255.0,flexField07,False
+string,_Flex Field 08,835,255.0,flexField08,False
+string,_Flex Field 09,836,255.0,flexField09,False
+string,_Flex Field 10,837,255.0,flexField10,False
+string,_Flex Field 11,838,255.0,flexField11,False
+string,_Flex Field 12,839,255.0,flexField12,False
+email,Temp Email Address,840,255.0,tempEmailAddress,False
+string,_Flex Field 13,850,255.0,flexField13,False
+string,_Flex Field 14,851,255.0,flexField14,False
+string,_Flex Field 15,852,255.0,flexField15,False
+string,_Flex Field 16,853,255.0,flexField16,False
+string,_Flex Field 17,854,255.0,flexField17,False
+string,_Flex Field 18,855,255.0,flexField18,False
+string,_Flex Field 19,856,255.0,flexField19,False
+string,_Flex Field 20,857,255.0,flexField20,False
+string,Marketo Time Zone,862,255.0,marketoTimeZone,True

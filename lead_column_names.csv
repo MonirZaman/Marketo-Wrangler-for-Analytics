@@ -1,0 +1,165 @@
+column_names
+Company Name
+Site
+Billing Address
+Billing City
+Billing State
+Billing Country
+Billing Postal Code
+Website
+Main Phone
+Annual Revenue
+Num Employees
+Industry
+SIC Code
+Company Notes
+Id
+Full Name
+Person Type
+Is Partner
+Is Lead
+Is Customer
+Is Anonymous
+Salutation
+First Name
+Middle Name
+Last Name
+Email Address
+Phone Number
+Mobile Phone Number
+Fax Number
+Job Title
+Contact Company
+Date of Birth
+Address
+City
+State
+Country
+Postal Code
+Original Source Type
+Original Source Info
+Registration Source Type
+Registration Source Info
+Original Search Engine
+Original Search Phrase
+Original Referrer
+Email Invalid
+Email Invalid Cause
+Unsubscribed
+Unsubscribed Reason
+Do Not Call
+Do Not Call Cause
+Do Not Call Reason
+Person Notes
+Anonymous IP
+Inferred Company
+Inferred Country
+Inferred City
+Inferred State Region
+Inferred Postal Code
+Inferred Metropolitan Area
+Inferred Phone Area Code
+Department
+Created At
+Updated At
+Cookies
+Lead Person
+Role
+Lead Source
+Lead Status
+Lead Score
+Urgency
+Priority
+Relative Score
+Relative Urgency
+Lead Rating
+Primary Lead Interest
+Lead Partition
+Lead Revenue Cycle Model ID
+Lead Revenue Stage ID
+Marketo Social Gender
+Marketo Social Facebook Display Name
+Marketo Social Twitter Display Name
+Marketo Social LinkedIn Display Name
+Marketo Social Facebook Profile URL
+Marketo Social Twitter Profile URL
+Marketo Social LinkedIn Profile URL
+Marketo Social Facebook Photo URL
+Marketo Social Twitter Photo URL
+Marketo Social LinkedIn Photo URL
+Marketo Social Facebook Reach
+Marketo Social Twitter Reach
+Marketo Social LinkedIn Reach
+Marketo Social Facebook Referred Visits
+Marketo Social Twitter Referred Visits
+Marketo Social LinkedIn Referred Visits
+Marketo Social Total Referred Visits
+Marketo Social Facebook Referred Enrollments
+Marketo Social Twitter Referred Enrollments
+Marketo Social LinkedIn Referred Enrollments
+Marketo Social Total Referred Enrollments
+Marketo Social Last Referred Visit
+Marketo Social Last Referred Enrollment
+Marketo Social Syndication Id
+Marketo Social Facebook Id
+Marketo Social Twitter Id
+Marketo Social LinkedIn Id
+Acquisition Program
+Acquisition Date
+I am a
+MEMBER_RATING
+UTM-Campaign-Source
+UTM-Campaign-Medium
+UTM-Campaign-Name
+UTM-Campaign-Term
+UTM-Campaign-Content
+External Company Id
+MarketoBU
+Subscribe CTE
+_Dynamic Content #03
+Subscribe FSW
+Event Status
+Subscribe DIN
+Event Date
+Event Name
+Subscribe CSM
+Subscribe SSE
+Subscribe SCPA
+Subscribe ODC
+Subscribe UNV
+Subscribe HSB
+Subscribe LAW
+_Dynamic Content #02
+Subscribe WSE
+Subscribe SCI
+Subscribe QTR
+Subscribe EVD
+Subscribe CAMP
+Subscribe NUR
+Subscribe VET
+Subscribe KIN
+_Dynamic Content #01
+Subscribe SPP
+Subscribe SCW
+Subscribe ART
+External Sales Person Id
+REID
+Current School
+Current Education Level
+Program of Interest 1
+Program of Interest 2
+Program of Interest 3
+Program of Interest 4
+_Resource Counter
+_Subscription Temp
+Faculty
+UCID
+Dietary Restrictions
+Category
+Grad Year
+_Global Subscription Preferences
+Last Form Fill
+CEM Acquisition Date
+Added By
+Temp Email Address
+Marketo Time Zone
