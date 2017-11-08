@@ -15,6 +15,7 @@ class MarkProgram(MarkCrawl):
         self.PROGRAM_EP='/rest/asset/v1/program/{}.json'
         self.LEADS_BY_PROGRAM_EP='/rest/v1/leads/programs/{}.json'
         self.LIST_PROGRAMS_EP='/rest/asset/v1/programs.json?maxReturn=200'
+        self.LIST_EMAILS_EP='/rest/asset/v1/emails.json?maxReturn=200'
         self.LIST_CAMPAIGNS_EP='/rest/v1/campaigns.json?batchSize=1000&workspaceName=Development'
  
     
@@ -34,9 +35,12 @@ class MarkProgram(MarkCrawl):
         # Return a complete campaign end point 
         return self.form_url(self.LIST_CAMPAIGNS_EP)
 
+    def get_list_emails_ep(self):
+        # Return a complete email end point 
+        return self.form_url(self.LIST_EMAILS_EP)
+
     def list_campaigns(self):
         # Return api response data in json for the list of campaigns end point
-
         return self.prep_req_and_query(self.get_list_campaigns_ep())
 
     def get_asset_info(self, program_id):
@@ -47,6 +51,10 @@ class MarkProgram(MarkCrawl):
     def list_programs(self):
         # Return api response data in json for the list of program end point
         return self.prep_req_and_query(self.get_list_programs_ep())
+
+    def list_emails(self):
+        # Return api response data in json for the list of email end point
+        return self.prep_req_and_query(self.get_list_emails_ep())
 
     def process_and_store_json(self, json_data, ignore_keys, keys_to_flat, folder_and_filename):
         '''Flatten one of values in the json_data and store value of the key 'result' in a file
@@ -83,6 +91,16 @@ class MarkProgram(MarkCrawl):
         self.process_and_store_json(rs, ignore_keys=[], keys_to_flat=['folder'], folder_and_filename='data/programs.csv')
         return (json.dumps(rs, indent=4))
 
+    def wrapper_list_emails(self):
+        ''' Call api for list of emails and store them in a flat csv file
+            Returns:
+                string representation of the json data for "result"
+        '''
+        rs=self.list_emails()
+        rs=rs['result']
+        self.process_and_store_json(rs, ignore_keys=[], keys_to_flat=['folder'], folder_and_filename='data/emails.csv')
+        return (json.dumps(rs, indent=4))
+
     def get_leads_by_program_id(self, program_id, suffix=''):
         # Request and show the leads who are member of a program
         url=self.get_leads_by_program_ep().format(str(program_id))
@@ -100,5 +118,5 @@ class MarkProgram(MarkCrawl):
 
 if __name__=='__main__':
     os.chdir('..')
-    print MarkProgram().wrapper_list_campaigns()
+    print MarkProgram().wrapper_list_emails()
 
