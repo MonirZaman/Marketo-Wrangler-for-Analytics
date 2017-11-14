@@ -12,8 +12,13 @@ For security reasons, only last part of the table name is mentioned here.
     * Campaigns  
     	- Stores individual email information that are part of an event
 
+## QUERY
+Please refer to the following query.
+* [email_info.sql](sql/email_info.sql) : Calculates click through information of an email
+* [event_info.sql](sql/event_info.sql) : Calculates number of registered, attended people of an event
 
-## JOIN
+
+## JOIN TABLES
 
 * Program : Activity  
 `Program.name = Activity.primaryAttributeValue`
@@ -22,7 +27,7 @@ For security reasons, only last part of the table name is mentioned here.
 `Program.Id = Campaigns.Id`
 
 * Leads : Activity  
-`Leads.Id=Activity.leadId`
+`Leads.Id = Activity.leadId`
 
 ## Get list of emails and events
 
@@ -110,6 +115,33 @@ SELECT
 FROM [Marketo].[dbo].[Activity]
 WHERE [primaryAttributeValue] like 'Psychology Clinic%'
 ```
+
+## Data Inclusion Criteria
+We remove some records crawled through the API that are not necessary. Following are the records that we keep:
+
+
+* For field `activityTypeName` we keep the following value:
+	- Visit Webpage
+	- Click Link
+	- Send Email
+	- Email Bounced
+	- Unsubscribe Email
+	- Open Email
+	- Click Email
+	- Email Bounced Soft
+	- Change Status in Progression
+
+* For `[activityTypeName]= ‘Change Status in Progression’`, fields (`New Status` or `Old Status`) must take a value from the list below:
+	- Attended
+	- Attended On-demand
+	- Can Not Attend
+	- Wait Listed
+	- Interested
+	- Invited
+	- No Show
+	- Not Interested
+	- Registered
+
 
 ## Comments
 - Not all the email program will have records in the `Campaign` table

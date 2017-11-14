@@ -2,6 +2,8 @@
 # Wrangling Marketo data for Analytics
 Marketo provides a RESTful API to create and retrieve records. API documentation can be found [here](http://developers.marketo.com/rest-api/). In order to download records in bulk, one needs to perform multiple steps such request token, create task, start task, check status of a task and download file. Marketo Wrangler have automated the entire process and is built using Python scripts. By executing the scripts, we can download records for several months. This documentation introduces commands to make individual API requests in Section 1. Then it shows commands to automate the bulk download process using the Marketo Wrangler in Section 2. Section 3 introduces commands to import the downloaded records into a database table.
 
+For Marketo data model, please refer to [this documentation](Marketo%20Data%20Model.md). 
+
 
 ## 1. Access Marketo API using CURL
 
@@ -121,11 +123,11 @@ Download completed.
 ```
 
 
-#### `python -u marketo_wrangler.py --entity=lead --operation=batch --date=<date_string> --daysoffset=<number of days> --limit=<number of time periods>`
+#### `python -u marketo_wrangler.py --entity=lead --operation=batch --date=<date_string> --dayoffset=<number of days> --limit=<number of time periods>`
 
 #### Description: 
 
-Command will download leads whose records were created in the last few months ending on the `date_string` and progress backwards by days equal to `dayoffset`. Number of time periods is the value of `limit`. Given `date_string` is `2017-08-29`, `limit` is `3` and `daysoffset` is `29`, the method will create 3 jobs with the following time periods:  
+Command will download leads whose records were created in the last few months ending on the `date_string` and progress backwards by days equal to `dayoffset`. Number of time periods is the value of `limit`. Given `date_string` is `2017-08-29`, `limit` is `3` and `dayoffset` is `29`, the method will create 3 jobs with the following time periods:  
                         `2017-08-01` to `2017-08-29`  
                         `2017-07-02` to `2017-07-31`  
                         `2017-06-02` to `2017-07-01`  
