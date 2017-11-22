@@ -1,8 +1,8 @@
 ![logo](https://blog.marketo.com/favicon.png)
 # Wrangling Marketo data for Analytics
-Marketo provides a RESTful API to create and retrieve records. API documentation can be found [here](http://developers.marketo.com/rest-api/). In order to download records in bulk, one needs to perform multiple steps such request token, create task, start task, check status of a task and download file. Marketo Wrangler have automated the entire process and is built using Python scripts. By executing the scripts, we can download records for several months. This documentation introduces commands to make individual API requests in Section 1. Then it shows commands to automate the bulk download process using the Marketo Wrangler in Section 2. Section 3 introduces commands to import the downloaded records into a database table.
+[Marketo](https://www.marketo.com/) automates marketing communication including lead management, email communication and event registration. Marketo provides a RESTful API to create and retrieve records.API documentation can be found [here](http://developers.marketo.com/rest-api/). In order to download records in bulk, one needs to perform multiple steps such request token, create task, start task, check status of a task and download file. This project, called Marketo Wrangler, have automated the entire process and is built using Python scripts. By executing the scripts, we can download records for several months. This documentation introduces commands to make individual API requests in Section 1. Then it shows commands to automate the bulk download process using the Marketo Wrangler in Section 2. Section 3 introduces commands to import the downloaded records into a database table.
 
-For Marketo data model, please refer to [this documentation](Marketo%20Data%20Model.md). 
+For **Marketo data model**, please refer to [this documentation](Marketo%20Data%20Model.md). 
 
 
 ## 1. Access Marketo API using CURL

@@ -7,6 +7,9 @@ For security reasons, only last part of the table name is mentioned here.
     	- Stores constituent/lead information
     * Program  
     	- Stores all the program information including Email and Events
+    * Email
+    	- Stores all the email information including parent - child relationships between email
+
     * Activity  
     	- Stores all the activity log
     * Campaigns  
@@ -21,7 +24,16 @@ Please refer to the following query.
 ## JOIN TABLES
 
 * Program : Activity  
-`Program.name = Activity.primaryAttributeValue`
+`Program.id = Activity.primaryAttributeValueId`
+
+* Program : Email  
+`Program.id = Email.programId`
+
+Note: API endpoint for Email sends programId inside the nested json for `{..., 'folder':{'value':programId}}`.
+We unnest the nested structure and rename `value` to `programId`
+
+* Email : Activity  
+`Email.id = Activity.primaryAttributeValueId`
 
 * Program : Campaigns  
 `Program.Id = Campaigns.Id`
@@ -49,19 +61,13 @@ An event (denoted by :date:) is considered as a program. One or more emails can 
 ![Event structure](image/event_structure.JPG)
 
 
-The following query will provide all the membership information of the event.
-```
-SELECT 
-    *
-  FROM [Marketo].[dbo].[Activity]
-  where [primaryAttributeValue] like '2017-10-18 DEV: Webinar Helping your child plan for post-secondary education'
-```
-
 ### Count event's attendance 
 The following query will provide the number of attendee of all the events.
 
 ```
 --NOTE: Schema and table names are dummy for security reasons. Replace dummy names
+
+use YOUR_SCHEMA_NAME;
 
 select
 	[Program Id],
@@ -74,9 +80,9 @@ from (
 			 p.id 'Program Id',
 			 p.name 'Program Name', 
 			 a.leadId
-	FROM [Marketo].[dbo].[Program] p
-		inner join [Marketo].[dbo].[Activity] a
-			on p.name = a.primaryAttributeValue
+	FROM [dbo].[Program] p
+		inner join [dbo].[Activity] a
+			on p.id = a.primaryAttributeValueId
 
 	where p.channel in ('Webinar', 'Standard Event')
 		and a.activityTypeName = 'Change Status in Progression'
@@ -88,19 +94,6 @@ group by [Program Id], [Program Name]
 ```
 
 
-### Get log of individual email that belong to an event
-To obtain information regarding individual email that belong to an event, use email name followed by the event name in the following format. 
-`EVENT NAME.EMAIL NAME`
-
-Below is a sample query. 
-
-```
-SELECT 
-    *
-  FROM [Marketo].[dbo].[Activity]
-  where [primaryAttributeValue] like '2017-10-18: Webinar Helping post-secondary education.OE20'
-```
-
 ## EMAIL  
 An email (denoted by :mailbox_with_no_mail:) can have one or emails associated with them. 
 ![Email structure](image/email_structure.JPG)
@@ -108,12 +101,27 @@ An email (denoted by :mailbox_with_no_mail:) can have one or emails associated w
 However, Program table will contain only one record describing the parent email. Activity table will contain logs related to sub individual emails. Email name will be in the format `PARENT EMAIL NAME.CHILD EMAIL NAME`. In order to get all logs related to the Email program, use the following query.
 
 
-
+Query 1:  
 ```
-SELECT 
-    *
-FROM [Marketo].[dbo].[Activity]
-WHERE [primaryAttributeValue] like 'Psychology Clinic%'
+use YOUR_SCHEMA_NAME;
+
+select *
+from    (
+		select *
+		from [dbo].[Program]
+		where channel in ('Email', 'Email Blast')
+	) p
+
+	left join [dbo].[Email] e
+		on p.id = e.programId
+
+	left join (
+		select *
+		from [dbo].[Activity] a
+		where a.activityTypeName in ('Send Email', 'Open Email', 'Click Email')
+	) a
+
+		on e.id = a.primaryAttributeValueId
 ```
 
 ## Data Inclusion Criteria
