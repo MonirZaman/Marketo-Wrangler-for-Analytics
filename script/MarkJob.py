@@ -122,7 +122,9 @@ class MarkJob(object):
             Args:
                 job_id: job identifier
             Returns:
-                None. Job output is stored as file when completed.
+                integer denoting the success of the task. Job output is stored as file when completed.
+                0 denotes success and -1 denotes failure
+                
 
         '''
         
@@ -132,10 +134,14 @@ class MarkJob(object):
                 data=self.get_file(job_id)
                 with open(os.path.join('job_output', self.jo.name, job_id+'.csv'), 'w') as f:
                     f.write(data)
+                return (0)
+
             else:
                 print 'Status of the job is ', result['status']
         else:
             print 'Status of the job could not be found'  
+
+        return (-1)
     
     def job_workflow(self, Filter):
         '''Automate a job by creating, starting, downloading the output
@@ -155,10 +161,7 @@ class MarkJob(object):
             raise Exception('Job creation was not successful')
         job_id= cstatus['result'][0]['exportId']   
         
-        #write job description
-        with open(os.path.join('job_description', self.jo.name, job_id+'.txt'),'w') as f:
-            f.write(json.dumps(Filter, indent=4))
-        
+       
         # Start job
         sstatus=self.jo.examine_status(self.start_job(job_id), 'job start')
                 
@@ -172,8 +175,14 @@ class MarkJob(object):
         
         # Download job's output
         print 'Job is completed. Downloading ....'
-        self.download(job_id) 
-        print 'Download completed.'
+        status = self.download(job_id)  # status 0 denote success
+
+        if status == 0:
+            print 'Download completed.'
+
+            #write job description
+            with open(os.path.join('job_description', self.jo.name, job_id+'.txt'),'w') as f:
+                f.write(json.dumps(Filter, indent=4))
     
     def download_batch(self, end_date_str, limit = 5, dayoffset=29):
         ''' Create job over multiple time periods starting from end_date_str

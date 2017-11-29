@@ -152,5 +152,6 @@ We remove some records crawled through the API that are not necessary. Following
 
 
 ## Comments
+- Marketo data warehouse integration guide(http://developers.marketo.com/support/Marketo_DB_Reference_Architecture.pdf)
 - Not all the email program will have records in the `Campaign` table
 - An email program has records in the `Campaign` table if it contains an item of type `Campaign`
